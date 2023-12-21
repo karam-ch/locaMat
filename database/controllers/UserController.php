@@ -10,7 +10,7 @@ class UserController extends Controller
     /**
      *  Get all users
      */
-    public function index()
+    public function getAllUsers()
     {
         $users = User::all();
         return response()->json($users);
@@ -19,7 +19,7 @@ class UserController extends Controller
     /**
      * Add a new user
      */
-    public function store(Request $request)
+    public function createUser(Request $request)
     {
         $user = new User();
         $user->name = $request->name;
