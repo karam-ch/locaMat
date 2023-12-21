@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/deploy', function () {
+    return shell_exec('cd /var/html/www/html/locamat && git reset --hard HEAD && git pull');
+});
