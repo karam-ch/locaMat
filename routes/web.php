@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/deploy', function () {
-    return shell_exec('cd /var/html/www/html/locamat && git pull');
+    return shell_exec('cd /var/html/www/html/locamat && git reset --hard HEAD && git pull');
 });
