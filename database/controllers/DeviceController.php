@@ -27,7 +27,6 @@ class DeviceController extends Controller
         $device->ref = $request->ref;
         $device->version = $request->version;
 
-
         $device->tel = $request->tel;
         $device->save();
 
