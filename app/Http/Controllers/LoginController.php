@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
 
-class LoginController extends BaseController
+class LoginController extends Controller
 {
     use AuthorizesRequests, ValidatesRequests;
 
     public function loginG() {
+        Auth::logout();
         return view('login');
     }
 
