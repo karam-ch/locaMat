@@ -30,7 +30,7 @@ class LoginController extends BaseController
 
         if (Auth::attempt($credentials)) {
             if (Auth::user()->new) {
-                return redirect()->to('reset'); // TODO : Replace by change-password
+                return redirect()->to('reset');
             }
             return redirect()->to('home');
         }
