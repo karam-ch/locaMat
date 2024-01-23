@@ -7,6 +7,11 @@
 3) npm run dev
 
 
+#####Front-end Launching process#####
+cd /resources/src/
+npm run start   //MAKE SURE TO HAVE NPM INSTALLED ON UR MACHINE
+
+
 
 
 #####Structure#####

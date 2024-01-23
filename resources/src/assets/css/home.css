@@ -44,3 +44,33 @@
 .submit-button:hover {
     background-color: #007bff;
 }
+
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    min-height: 50vh;
+    margin: 10% 10%;
+}
+
+.box {
+    background-color: skyblue;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.box:hover {
+    background-color: #007bff;
+    box-shadow: 10px 20px 14px rgba(0, 0, 0, 0.5);
+    /* darker blue on hover */
+}
