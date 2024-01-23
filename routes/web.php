@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,10 @@ Route::get('/login', [LoginController::class, 'loginG']);
 Route::post('/login', [LoginController::class, 'loginP']);
 Route::get('/reset', [LoginController::class, 'resetG']);
 Route::post('/reset', [LoginController::class, 'resetP']);
+
+// Device
+Route::get('/device/add', [DeviceController::class, 'addG']);
+Route::post('/device/add', [DeviceController::class, 'addP']);
 
 // Home
 Route::get('/home', function () {
