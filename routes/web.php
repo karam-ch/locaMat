@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,15 @@ Route::get('/', function () {
 
 Route::get('/deploy', function () {
     return shell_exec('cd /var/html/www/html/locamat && git reset --hard HEAD && git pull');
+});
+
+// Login
+Route::get('/login', [LoginController::class, 'loginG']);
+Route::post('/login', [LoginController::class, 'loginP']);
+Route::get('/reset', [LoginController::class, 'resetG']);
+Route::post('/reset', [LoginController::class, 'resetP']);
+
+// Home
+Route::get('/home', function () {
+    return view('home');
 });
