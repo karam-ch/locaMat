@@ -1,0 +1,76 @@
+.login-form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-field input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.submit-button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #007bff;
+}
+
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    min-height: 50vh;
+    margin: 10% 10%;
+}
+
+.box {
+    background-color: skyblue;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.box:hover {
+    background-color: #007bff;
+    box-shadow: 10px 20px 14px rgba(0, 0, 0, 0.5);
+    /* darker blue on hover */
+}

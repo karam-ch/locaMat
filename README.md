@@ -1,66 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+#####Launching process#####
+1) Make sure to have npm installed on ur machine
+2) npm install
+3) Modify in .env file database configurations to make it match with config u have on ur pc
+3) npm run dev
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#####Front-end Launching process#####
+cd /resources/src/
+npm run start   //MAKE SURE TO HAVE NPM INSTALLED ON UR MACHINE
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#####Structure#####
+/app:
+Contains the core code of your application, including models, controllers, and policies. It's organized into several namespaces.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+/bootstrap:
+Contains the app.php file which bootstraps the framework. This directory also holds the cache files used to optimize performance.
 
-## Laravel Sponsors
+/config:
+Contains all of your application's configuration files. Each file corresponds to a different aspect of your Laravel application, such as database, mail, services, and more.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+/database:
+Contains database migration and seed files, allowing you to define your database's structure and initial test data.
 
-### Premium Partners
+/node_modules:
+Contains Node.js modules installed via npm (not part of Laravel's PHP structure but for front-end assets).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+/public:
+The entry point for all requests entering your application. It contains assets like images, JavaScript, and CSS.
 
-## Contributing
+/resources:
+Contains views (Blade templates), raw assets (LESS, SASS, JavaScript), and language files.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+/routes:
+All the application routes are defined here. Laravel comes with several route files: web.php, api.php, console.php, and channels.php.
 
-## Code of Conduct
+/storage:
+Used for storing compiled Blade templates, file-based sessions, file caches, and other files generated by the framework. This directory is segregated into app, framework, and logs directories.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+/tests:
+Contains your automated tests. PHPUnit is Laravel's default testing framework.
 
-## Security Vulnerabilities
+/.env:
+Your application's environment-specific variables will be set here. It's not tracked by Git for security reasons.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+/.gitignore:
+Specifies intentionally untracked files to ignore when using Git.
 
-## License
+/artisan:
+The entry point for the Laravel command line interface (CLI). You can execute Artisan commands with this script.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+/composer.json and /composer.lock:
+Define the project's PHP dependencies and lock them to specific versions.
+
+/package.json and /package-lock.json:
+Define the project's Node.js dependencies for front-end tooling.
+
+/phpunit.xml:
+    Configuration file for PHPUnit tests.
+    
+/vite.config.js:
+    Configuration file for Vite, a modern front-end build tool (used in Laravel 9 and above).
