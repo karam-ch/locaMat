@@ -11,6 +11,10 @@ class DeviceController extends Controller
 {
     use AuthorizesRequests, ValidatesRequests;
 
+    public function list() {
+        return view('device.list');
+    }
+
     public function addG() {
         return view('device.add');
     }

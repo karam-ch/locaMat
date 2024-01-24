@@ -30,6 +30,7 @@ Route::get('/reset', [LoginController::class, 'resetG']);
 Route::post('/reset', [LoginController::class, 'resetP']);
 
 // Device
+Route::get('/device/list', [DeviceController::class, 'list']);
 Route::get('/device/add', [DeviceController::class, 'addG']);
 Route::post('/device/add', [DeviceController::class, 'addP']);
 
