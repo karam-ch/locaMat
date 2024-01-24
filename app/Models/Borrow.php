@@ -10,4 +10,12 @@ class Borrow extends Model
     use HasFactory;
 
     public $table = 'borrow';
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function device() {
+        return $this->belongsTo(Device::class);
+    }
 }

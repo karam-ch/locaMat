@@ -15,6 +15,10 @@ class Device extends Model
         return $this->hasMany(Borrow::class, 'device_id');
     }
 
+    public function currentBorrow() {
+        return $this->borrows()->whereDate('end_date', '>=', today())->first();
+    }
+
     protected static function booted () {
         static::deleting(function(Device $device) {
             $device->borrows()->delete();
