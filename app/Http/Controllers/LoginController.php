@@ -27,10 +27,13 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->new) {
+            if (Auth::user()->new)
                 return redirect()->to('reset');
-            }
-            return redirect()->to('home');
+
+            if (Auth::user()->administrator)
+                return redirect()->to('home');
+            else
+                return redirect()->to('device/list');
         }
 
         return redirect()->back()->withErrors(['msg' => 'Incorrect password or email address.'])->withInput();
