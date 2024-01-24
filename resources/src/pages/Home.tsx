@@ -11,9 +11,9 @@ const Home = () => {
     return (
         <div className="container">
             <div className="box" onClick={() => navigate('/add-device')}>Add A Device</div>
-            <div className="box" onClick={() => navigate('/')}>Box 2</div>
-            <div className="box" onClick={() => navigate('/')}>Box 3</div>
-            <div className="box" onClick={() => navigate('/')}>Box 4</div>
+            <div className="box" onClick={() => navigate('/')}>Add a user</div>
+            <div className="box" onClick={() => navigate('/')}>Device list</div>
+            <div className="box" onClick={() => navigate('/')}>User list</div>
         </div>
     );
 };
