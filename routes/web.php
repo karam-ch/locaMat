@@ -33,6 +33,10 @@ Route::post('/reset', [LoginController::class, 'resetP']);
 Route::get('/device/list', [DeviceController::class, 'list']);
 Route::get('/device/add', [DeviceController::class, 'addG']);
 Route::post('/device/add', [DeviceController::class, 'addP']);
+Route::get('/device/{id}/edit', [DeviceController::class, 'editG'])->where('id', '[0-9]+');;
+Route::post('/device/{id}/edit', [DeviceController::class, 'editP'])->where('id', '[0-9]+');;
+Route::post('/device/{id}/delete', [DeviceController::class, 'delete'])->where('id', '[0-9]+');;
+Route::get('/device/{id}', [DeviceController::class,'show'])->where('id', '[0-9]+');;
 
 // Home
 Route::get('/home', function () {
