@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id(); 
             $table->enum('type', ['TEL', 'PC', 'TAB']);
             $table->string('name', 30);
+            $table->enum('type', ['TEL', 'PC', 'TAB']);
             $table->string('ref', 5);
             $table->string('version'); 
             $table->binary('image')->nullable();
@@ -22,6 +23,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::dropIfExists('device');
     }
 };

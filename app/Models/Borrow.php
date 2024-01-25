@@ -8,21 +8,13 @@ class Borrow extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['userId', 'deviceId', 'start_date', 'end_date'];
+    public $table = 'borrow';
 
-    /**
-     * The user who borrowed the device.
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'userId');
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 
-    /**
-     * The device that was borrowed.
-     */
-    public function device()
-    {
-        return $this->belongsTo(Device::class, 'deviceId');
+    public function device() {
+        return $this->belongsTo(Device::class);
     }
 }
