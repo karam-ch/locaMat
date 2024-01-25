@@ -14,6 +14,16 @@ class User extends Authenticatable
 
     public $table = 'user';
 
+    public function borrows() {
+        return $this->hasMany(Borrow::class, 'device_id');
+    }
+
+    protected static function booted () {
+        static::deleting(function(User $user) {
+            $user->borrows()->delete();
+        });
+    }
+
     /**
      * The attributes that are mass assignable.
      *
