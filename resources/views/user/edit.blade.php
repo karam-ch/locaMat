@@ -1,29 +1,24 @@
+<h2>User n°{{ $user->id }}</h2>
+
 <form method="POST">
     @csrf
+
     <label>
         Lastname
-        <input type="text" name="lastname">
+        <input type="text" name="lastname" value="{{ $user->lastname }}">
     </label>
 
     <label>
         Firstname
-        <input type="text" name="firstname">
+        <input type="text" name="firstname" value="{{ $user->firstname }}">
     </label>
 
     <label>
         Email
-        <input type="email" name="email">
+        <input type="email" name="email" value="{{ $user->email }}">
     </label>
 
-    <label>
-        Role
-        <select name="role">
-            <option value="borrower">Borrower</option>
-            <option value="administrator">Administrator</option>
-        </select>
-    </label>
-
-    <input type="submit" value="Create the user">
+    <input type="submit" value="Modify the user">
 
     @if($errors->any())
         {!! implode('', $errors->all('<div class="errors">:message</div>')) !!}
