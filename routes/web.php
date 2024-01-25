@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/deploy', function () {
-    return shell_exec('cd /var/html/www/html/locamat && ./update.sh');
+    return shell_exec('cd /var/www/html/locamat && ./update.sh');
 });
 
 // Login
