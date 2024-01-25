@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->to('/login');
 });
 
 Route::get('/deploy', function () {
@@ -25,33 +25,36 @@ Route::get('/deploy', function () {
 });
 
 // Login
-Route::get('/login', [LoginController::class, 'loginG']);
+Route::get('/login', [LoginController::class, 'loginG'])->name('login');
 Route::post('/login', [LoginController::class, 'loginP']);
-Route::get('/reset', [LoginController::class, 'resetG']);
-Route::post('/reset', [LoginController::class, 'resetP']);
 
-// Device
-Route::get('/device/list', [DeviceController::class, 'list']);
-Route::get('/device/add', [DeviceController::class, 'addG']);
-Route::post('/device/add', [DeviceController::class, 'addP']);
-Route::get('/device/{id}/edit', [DeviceController::class, 'editG'])->where('id', '[0-9]+');
-Route::post('/device/{id}/edit', [DeviceController::class, 'editP'])->where('id', '[0-9]+');
-Route::post('/device/{id}/delete', [DeviceController::class, 'delete'])->where('id', '[0-9]+');
-Route::post('/device/{id}/borrow', [DeviceController::class, 'borrow'])->where('id', '[0-9]+');
-Route::post('/device/{id}/return', [DeviceController::class, 'returnP'])->where('id', '[0-9]+');
-Route::get('/device/{id}', [DeviceController::class,'show'])->where('id', '[0-9]+');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/reset', [LoginController::class, 'resetG']);
+    Route::post('/reset', [LoginController::class, 'resetP']);
 
-// User
-Route::get('/user/add', [UserController::class, 'addG']);
-Route::post('/user/add', [UserController::class, 'addP']);
-Route::get('/user/list', [UserController::class, 'list']);
-Route::get('/user/me', [UserController::class, 'me']);
-Route::get('/user/{id}/edit', [UserController::class, 'editG'])->where('id', '[0-9]+');
-Route::post('/user/{id}/edit', [UserController::class, 'editP'])->where('id', '[0-9]+');
-Route::post('/user/{id}/delete', [UserController::class, 'delete'])->where('id', '[0-9]+');
-Route::get('/user/{id}', [UserController::class, 'show'])->where('id', '[0-9]+');
+    // Device
+    Route::get('/device/list', [DeviceController::class, 'list']);
+    Route::get('/device/add', [DeviceController::class, 'addG'])->middleware('admin');
+    Route::post('/device/add', [DeviceController::class, 'addP'])->middleware('admin');
+    Route::get('/device/{id}/edit', [DeviceController::class, 'editG'])->where('id', '[0-9]+')->middleware('admin');
+    Route::post('/device/{id}/edit', [DeviceController::class, 'editP'])->where('id', '[0-9]+')->middleware('admin');
+    Route::post('/device/{id}/delete', [DeviceController::class, 'delete'])->where('id', '[0-9]+')->middleware('admin');
+    Route::post('/device/{id}/borrow', [DeviceController::class, 'borrow'])->where('id', '[0-9]+');
+    Route::post('/device/{id}/return', [DeviceController::class, 'returnP'])->where('id', '[0-9]+');
+    Route::get('/device/{id}', [DeviceController::class,'show'])->where('id', '[0-9]+');
 
-// Home
-Route::get('/home', function () {
-    return view('home');
+    // User
+    Route::get('/user/add', [UserController::class, 'addG'])->middleware('admin');
+    Route::post('/user/add', [UserController::class, 'addP'])->middleware('admin');
+    Route::get('/user/list', [UserController::class, 'list'])->middleware('admin');
+    Route::get('/user/me', [UserController::class, 'me']);
+    Route::get('/user/{id}/edit', [UserController::class, 'editG'])->where('id', '[0-9]+')->middleware('admin');
+    Route::post('/user/{id}/edit', [UserController::class, 'editP'])->where('id', '[0-9]+')->middleware('admin');
+    Route::post('/user/{id}/delete', [UserController::class, 'delete'])->where('id', '[0-9]+')->middleware('admin');
+    Route::get('/user/{id}', [UserController::class, 'show'])->where('id', '[0-9]+')->middleware('admin');
+
+    // Home
+    Route::get('/home', function () {
+        return view('home');
+    });
 });

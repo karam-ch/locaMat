@@ -1,2 +1,2 @@
 <h2>Edit Device</h2>
-{{ $device }}
+{{ $device->name }}
