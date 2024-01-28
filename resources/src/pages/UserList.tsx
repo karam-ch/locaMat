@@ -4,7 +4,6 @@ import '../assets/css/userList.css';
 
 export default function UserList() {
     const [users, setUsers] = useState([]);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -15,7 +14,6 @@ export default function UserList() {
                 console.error('Error fetching users:', error);
             }
         };
-
         fetchData();
     }, []);
 

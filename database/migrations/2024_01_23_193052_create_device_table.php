@@ -8,11 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::create('device', function (Blueprint $table) {
             $table->id(); 
             $table->enum('type', ['TEL', 'PC', 'TAB']);
             $table->string('name', 30);
-            $table->enum('type', ['TEL', 'PC', 'TAB']);
             $table->string('ref', 5);
             $table->string('version'); 
             $table->binary('image')->nullable();
