@@ -1,6 +1,7 @@
 <h2>Login</h2>
 <form method="POST">
     @csrf
+    ourbgiuebuigbeiugbeurignb
     <label>
         Email
         <input type="email" name="email" required>
