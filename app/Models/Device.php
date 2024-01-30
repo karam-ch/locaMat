@@ -16,7 +16,7 @@ class Device extends Model
     }
 
     public function currentBorrow() {
-        return $this->borrows()->whereDate('end_date', '>=', now())->first();
+        return $this->borrows()->whereDate('end_date', '>', now())->first();
     }
 
     protected static function booted () {

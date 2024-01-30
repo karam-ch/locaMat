@@ -56,5 +56,5 @@ Route::group(['middleware' => 'auth'], function () {
     // Home
     Route::get('/home', function () {
         return view('home');
-    });
+    })->middleware('admin');
 });

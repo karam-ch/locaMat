@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Arr;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -15,7 +16,21 @@ class User extends Authenticatable
     public $table = 'user';
 
     public function borrows() {
-        return $this->hasMany(Borrow::class, 'device_id');
+        return $this->hasMany(Borrow::class, 'user_id');
+    }
+
+    public function current_borrows() {
+        $borrows = $this->borrows()->get();
+        return $borrows->filter(function ($borrow) {
+            return !$borrow->isReturned();
+        })->values();
+    }
+
+    public function old_borrows() {
+        $borrows = $this->borrows()->get();
+        return $borrows->filter(function ($borrow) {
+            return $borrow->isReturned();
+        })->values();
     }
 
     protected static function booted () {
