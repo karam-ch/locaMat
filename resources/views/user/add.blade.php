@@ -1,3 +1,4 @@
+@include('head')
 <form method="POST">
     @csrf
     <label>
@@ -24,14 +25,5 @@
     </label>
 
     <input type="submit" value="Create the user">
-
-    @if($errors->any())
-        {!! implode('', $errors->all('<div class="errors">:message</div>')) !!}
-    @endif
-
-    @if (session('success'))
-        <div class="success">
-            {{ session('success') }}
-        </div>
-    @endif
 </form>
+@include('footer')

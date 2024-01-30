@@ -1,3 +1,4 @@
+@include('head')
 <h2>User n°{{ $user->id }}</h2>
 
 <form method="POST">
@@ -19,14 +20,5 @@
     </label>
 
     <input type="submit" value="Modify the user">
-
-    @if($errors->any())
-        {!! implode('', $errors->all('<div class="errors">:message</div>')) !!}
-    @endif
-
-    @if (session('success'))
-        <div class="success">
-            {{ session('success') }}
-        </div>
-    @endif
 </form>
+@include('footer')

@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/deploy', function () {
-    return shell_exec('cd /var/html/www/html/locamat && git reset --hard HEAD && git pull');
+    return shell_exec('cd /var/www/html/locamat && chmod +x update.sh && ./update.sh && chmod +x update.sh');
 });
 
 // Login
@@ -56,5 +56,5 @@ Route::group(['middleware' => 'auth'], function () {
     // Home
     Route::get('/home', function () {
         return view('home');
-    });
+    })->middleware('admin');
 });

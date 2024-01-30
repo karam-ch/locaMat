@@ -1,3 +1,4 @@
+@include('head')
 <h2>Login</h2>
 <form method="POST">
     @csrf
@@ -10,8 +11,5 @@
         <input type="password" name="password" required>
     </label>
     <input type="submit" value="Login">
-
-    @if($errors->any())
-        {!! implode('', $errors->all('<div class="errors">:message</div>')) !!}
-    @endif
 </form>
+@include('footer')

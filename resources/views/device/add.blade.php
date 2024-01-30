@@ -1,3 +1,5 @@
+@include('head')
+<h2>Add a device</h2>
 <form method="POST" enctype="multipart/form-data">
     @csrf
     <label>
@@ -42,7 +44,6 @@
 
     <input type="submit" value="Create the device">
 
-    @if($errors->any())
-        {!! implode('', $errors->all('<div class="errors">:message</div>')) !!}
-    @endif
+    <a href="/home">Back</a>
 </form>
+@include('footer')
