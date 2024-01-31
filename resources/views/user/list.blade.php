@@ -22,7 +22,9 @@
                 <th scope="row" class='user-list-th'>{{ $user->lastname }}</th>
                 <th scope="row" class='user-list-th'>{{ $user->email }}</th>
                 <th scope="row" class='user-list-th'>{{ $user->administrator ? 'Administrator' : 'Borrower' }}</th>
-                <a href="/home"><button class='back'>Modify</button></a>
+                <th>
+                    <a href="/user/{{ $user->id }}/edit"><button class='back'>Modify</button></a>
+                </th>
             </tr>
             @endforeach
         </tbody>

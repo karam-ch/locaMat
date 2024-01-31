@@ -24,6 +24,9 @@
                 <th scope="row" class='device-list-th'>{{ $device->version }}</th>
                 <th scope="row" class='device-list-th'>{{ $device->tel }}</th>
                 <th scope="row" class='device-list-th'><img src="data:image/png;base64,{{ base64_encode($device->image) }}"></th>
+                <th>
+                    <a href="/device/{{ $device->id }}/edit"><button class='back'>Modify</button></a>
+                </th>
             </tr>
             @endforeach
         </tbody>
