@@ -194,6 +194,37 @@ a:hover {
     background-color: rgb(55, 151, 207);
 }
 
+/** EDIT USER **/
+.user-edit-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.user-edit-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-edit-container input[type="submit"] {
+    width: 120px;
+    height: 20px;
+    background-color: rgb(130, 198, 238);
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.user-edit-container input[type="submit"]:hover {
+    background-color: rgb(55, 151, 207);
+}
 
 /** USER LIST **/
 .user-list-container {
@@ -254,5 +285,38 @@ a:hover {
 }
 
 .back:hover {
+    background-color: rgb(55, 151, 207);
+}
+
+/** EDIT DEVICE **/
+.device-edit-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.device-edit-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.device-edit-container input[type="submit"] {
+    width: 120px;
+    height: 20px;
+    background-color: rgb(130, 198, 238);
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: center;
+}
+
+.device-edit-container input[type="submit"]:hover {
     background-color: rgb(55, 151, 207);
 }
