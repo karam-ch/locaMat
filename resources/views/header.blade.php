@@ -1,11 +1,16 @@
+<head>
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
+</head>
 <header>
-    <h1>Locamat</h1>
+    <a href="/">
+        <img src="{{ asset('images/Locamat2.png') }}" alt="" class='logo-image'>
+    </a>
 
     @if(Auth::check())
-        <div>
+        <div class="header-container">
             {{ Auth::user()->lastname }}
         </div>
     @else
-        <div>Not connected</div>
+        <div class="header-container">Not connected</div>
     @endif
 </header>

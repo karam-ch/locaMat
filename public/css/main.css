@@ -1,0 +1,258 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: #f0f0f0;
+}
+
+
+/** HEADER **/
+
+.logo-image {
+    padding: 10px 60px;
+    height: 50px;
+}
+
+.header-container {
+    background-color: rgb(130, 198, 238);
+    width: 100%;
+    height: auto;
+    padding: 2% 5%;
+}
+
+
+/** LOGIN **/
+.login-form-container {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Style for each label and input */
+.login-form-container label {
+    display: block;
+    margin-bottom: 10px;/
+}
+
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(130, 198, 238);
+    color: white;
+    cursor: pointer;
+}
+
+.login-form-container input[type="submit"]:hover {
+    background-color: rgb(55, 151, 207);
+}
+
+
+
+/** HOME **/
+.home-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-box {
+    background-color: rgb(130, 198, 238);
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    margin: 10px;
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.home-box:hover {
+    background-color: rgb(55, 151, 207);
+}
+
+.home-row {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+@media (max-width: 600px) {
+    .home-box {
+        padding: 10px;
+    }
+
+    .home-box a {
+        font-size: 16px;
+    }
+
+    .home-row {
+        flex-direction: column;
+    }
+}
+
+
+/** ADD DEVICE **/
+
+.add-device-form-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.add-device-form-container form {
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    align-items: center;
+}
+
+.add-device-form-container input[type="submit"] {
+    background-color: rgb(130, 198, 238);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-device-form-container input[type="submit"]:hover {
+    background-color: rgb(55, 151, 207);
+}
+
+.add-device-form-container a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/** ADD USER **/
+
+.add-user-form-container {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+
+.add-user-form-container label {
+    display: block;
+    margin-bottom: 10px;/
+}
+
+.add-user-form-container input[type="submit"] {
+    background-color: rgb(130, 198, 238);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-user-form-container input[type="submit"]:hover {
+    background-color: rgb(55, 151, 207);
+}
+
+
+/** USER LIST **/
+.user-list-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.user-list-container table {
+    border-collapse: separate;
+}
+
+.user-list-th {
+    padding: 15px;
+}
+
+.user-list-tr {
+    border-bottom: 5px solid rgb(130, 198, 238);
+}
+
+
+/** DEVICE LIST **/
+.device-list-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.device-list-container table {
+    border-collapse: separate;
+}
+
+.device-list-th {
+    padding: 15px;
+}
+
+.device-list-tr {
+    border-bottom: 5px solid rgb(130, 198, 238);
+}
+
+.back {
+    width: 60px;
+    height: 20px;
+    background-color: rgb(130, 198, 238);
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.back:hover {
+    background-color: rgb(55, 151, 207);
+}

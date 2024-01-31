@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name', 30);
             $table->enum('type', ['TEL', 'PC', 'TAB']);
-            $table->string('name', 30);
             $table->string('ref', 5);
             $table->string('version');
             $table->binary('image')->nullable();

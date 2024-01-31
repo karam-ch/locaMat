@@ -21,7 +21,7 @@ class UserController extends Controller
 
     public function list() {
         $users = User::all();
-        return response()->json($users);
+        return view('user.list');
     }
 
     public function addG() {
