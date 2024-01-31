@@ -1,0 +1,17 @@
+.user-list {
+    padding: 10px;
+}
+
+.user-item {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-item:hover {
+    background-color: #f0f0f0;
+}

@@ -1,6 +1,7 @@
 @include('head')
 <h2>Add a device</h2>
-<form method="POST" enctype="multipart/form-data">
+<div class="add-device-form-container">
+    <form method="POST" enctype="multipart/form-data">
     @csrf
     <label>
         Name
@@ -45,5 +46,6 @@
     <input type="submit" value="Create the device">
 
     <a href="/home">Back</a>
-</form>
+    </form>
+</div>
 @include('footer')
