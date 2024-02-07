@@ -1,7 +1,8 @@
 @include('head')
-<h2>Add a device</h2>
 <div class="add-device-form-container">
     <form method="POST" enctype="multipart/form-data">
+    <h2>Add a device</h2>
+
     @csrf
     <label>
         Name
