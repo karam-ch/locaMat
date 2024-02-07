@@ -12,6 +12,9 @@
            <a href="/login">
             Sign out
             </a>
+            <a href="/user/me">
+            View profile
+            </a>
         </div>
     @else
         <div class="header-container">Not connected</div>

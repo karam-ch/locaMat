@@ -25,8 +25,13 @@ a:hover {
     width: 100%;
     height: auto;
     padding: 2% 5%;
+    display: flex;
+    gap: 20px;
 }
 
+.header-container a {
+    color: black;
+}
 
 /** LOGIN **/
 .login-form-container {
@@ -321,4 +326,31 @@ a:hover {
 
 .device-edit-container input[type="submit"]:hover {
     background-color: rgb(55, 151, 207);
+}
+
+
+
+/** ME **/
+
+.me-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
 }
