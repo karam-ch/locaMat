@@ -9,8 +9,13 @@
     @if(Auth::check())
         <div class="header-container">
            Hello {{ Auth::user()->firstname }}
+           <a href="/login">
+            Sign out
+            </a>
         </div>
     @else
         <div class="header-container">Not connected</div>
     @endif
+
+
 </header>

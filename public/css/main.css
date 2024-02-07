@@ -8,6 +8,10 @@ html {
     background-color: #f0f0f0;
 }
 
+a,
+a:hover {
+    text-decoration: none;
+}
 
 /** HEADER **/
 
@@ -126,6 +130,7 @@ html {
 }
 
 .add-device-form-container form {
+    margin-top: 3%;
     width: 30%;
     padding: 20px;
     display: flex;
@@ -157,9 +162,6 @@ html {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 
 /** ADD USER **/
