@@ -65,7 +65,7 @@ class DeviceController extends Controller
     public function editP(Request $request, string $id) {
         $device = Device::findOrFail($id);
         $validate = $request->validate([
-            'name' => 'max:30',
+            'name' => 'required|max:30',
             'type' => 'in:TEL,TAB,PC',
             'reference' => 'in:AN,AP,XX',
             'version' => 'max:15',
