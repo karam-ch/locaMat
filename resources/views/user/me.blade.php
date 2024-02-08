@@ -85,14 +85,18 @@
         <div class="action">
             <a href="/user/{{ Auth::user()->id }}/edit">Modify</a>
         </div>
-        
+
         <div class="action">
             <form action="/user/{{ Auth::user()->id }}/delete" method="POST">
                 @csrf
                 <input type="submit" value="Delete">
             </form>
         </div>
-        <a href="/user/list" class='back'>Back</a>
+        @if(Auth::user()->administrator)
+            <a href="/home" class='back'>Back</a>
+        @else
+            <a href="/device/list" class="back">Back</a>
+        @endif
     </div>
 
 </div>
