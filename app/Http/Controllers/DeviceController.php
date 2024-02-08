@@ -31,6 +31,7 @@ class DeviceController extends Controller
             'reference' => 'required|in:AN,AP,XX',
             'version' => 'required|max:15',
             'tel' => 'nullable|digits:10',
+            'image' => 'mimes:png'
         ]);
 
         $device = new Device;
@@ -69,6 +70,7 @@ class DeviceController extends Controller
             'reference' => 'in:AN,AP,XX',
             'version' => 'max:15',
             'tel' => 'nullable|digits:10',
+            'image' => 'mimes:png'
         ]);
 
         if ($request->has('name'))

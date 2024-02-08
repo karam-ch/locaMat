@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+
 
 class LoginController extends Controller
 {
@@ -24,8 +25,6 @@ class LoginController extends Controller
             'password' => 'required|max:30'
         ]);
 
-        // $user = User::where('email', $request->input('email'))->first();
-        // Auth::login($user);
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             if (Auth::user()->new)
