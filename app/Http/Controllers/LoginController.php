@@ -50,6 +50,9 @@ class LoginController extends Controller
         Auth::user()->password = Hash::make($request->input('password'));
         Auth::user()->new = false;
         Auth::user()->save();
-        return redirect()->intended('home');
+        if (Auth::user()->administrator)
+            return redirect()->to('home');
+        else
+            return redirect()->to('device/list');
     }
 }
